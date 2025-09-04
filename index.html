@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    .form-container {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 500px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn {
+      background: #27ae60;
+      color: white;
+    }
+    .clear-btn {
+      background: #e74c3c;
+      color: white;
+    }
+    .thankyou {
+      display: none;
+      text-align: center;
+      color: #27ae60;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Registration</h2>
+    <form id="studentForm" action="https://docs.google.com/forms/d/e/1FAIpQLScPUa7P9wKKkEmwimOmOIhTgIM7u9zhETOYqIURWcerO3s4Dg/formResponse" method="POST" target="hidden_iframe" onsubmit="showMessage()">
+
+      <label>Full Name</label>
+      <input type="text" name="entry.997021349" required>
+
+      <label>Grade</label>
+      <input type="text" name="entry.180306948" required>
+
+      <label>School</label>
+      <input type="text" name="entry.74488444" required>
+
+      <label>Address</label>
+      <input type="text" name="entry.377707306" required>
+
+      <label>Phone Number</label>
+      <input type="text" name="entry.1450609673" required>
+
+      <label>Subjects</label>
+      <select name="entry.1517641662" multiple required>
+        <option>Science</option>
+        <option>Science (English Medium)</option>
+        <option>Mathematics</option>
+        <option>Mathematics (English Medium)</option>
+        <option>Sinhala</option>
+        <option>English</option>
+        <option>History</option>
+        <option>Commerce</option>
+        <option>Dancing</option>
+        <option>Tamil</option>
+        <option>Scholarship</option>
+        <option>Math for Kids</option>
+        <option>Spoken English</option>
+        <option>ICT</option>
+        <option>Japan Language</option>
+        <option>Anusha Teacher's Class</option>
+      </select>
+
+      <div class="btn-group">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="reset" class="clear-btn">Clear</button>
+      </div>
+    </form>
+
+    <div class="thankyou" id="thankyouMsg">
+      ✅ Thank you! Your response has been successfully added.
+    </div>
+  </div>
+
+  <!-- Hidden iframe for Google Form submission -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    function showMessage() {
+      document.getElementById("thankyouMsg").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("studentForm").reset();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
